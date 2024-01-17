@@ -18,13 +18,13 @@ class ProductsController
     {
         echo "Đây là danh sách khách hàng";
         $products = $this->products->getproducts();
-        include_once "View/Products/listproducts.php";
+        include_once "view/Products/listproducts.php";
     }
 
     public function addproducts()
     {
         echo "Đây là trang thêm khách hàng";
-        include_once "View/Products/addproducts.php";
+        include_once "view/Products/addproducts.php";
         if (isset($_POST['them']) && ($_POST['them'])) {
             $id = $_POST["id"];
             $ten_sp = $_POST["ten_sp"];
@@ -49,7 +49,7 @@ class ProductsController
         } else if (isset($_GET['id'])) {
             $id = $_GET['id'];
             $getproductsByID = $this->products->getproductsByID($id);
-            include_once "View/Products/editproducts.php";
+            include_once "view/Products/editproducts.php";
 
         }
     }
